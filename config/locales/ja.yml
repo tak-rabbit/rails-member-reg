@@ -1,0 +1,18 @@
+ja:
+  view:
+    name: 氏名
+    email: Eメールアドレス
+    password: パスワード
+
+  activerecord:
+    errors:
+      models:
+        member:
+          attributes:
+            email:
+              invalid: "無効なメールアドレスです"
+              taken: "メールアドレスはすでに存在します"
+            password:
+              blank: "必須項目です"
+            password_confirmation:
+              confirmation: "パスワードが一致しません"

@@ -1,0 +1,82 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+
+ .container {
+   width: 400px;
+   margin: 20px auto;
+ }
+
+ h2 {
+   font-size: 16px;
+   padding-bottom: 10px;
+   margin-bottom: 15px;
+   border-bottom: 1px solid #ddd;
+ }
+
+ .header-menu {
+   font-size: 12px;
+   font-weight: normal;
+   float: right;
+ }
+
+ input[type="text"],
+ input[type="password"] {
+   box-sizing: border-box;
+   width: 400px;
+   padding: 5px;
+ }
+
+ #member_password_confirmation {
+   margin-top: 15px;
+ }
+
+ .error {
+   font-size: 12px;
+   font-weight: bold;
+   color: tomato;
+ }
+
+ .field_h {
+   float: left;
+   margin: 5px 0 5px 5px;
+   width: 120px;
+ }
+
+ .field_t {
+   float: left;
+   font-size: 12px;
+   padding-left: 10px;
+   margin: 5px 0;
+   width: 700px;
+ }
+
+ ul {
+   list-style: none;
+   display: table;
+   padding: 10px 0px;
+   width: 915px;
+ }
+
+ li{
+     min-height: 55px;
+ }
+
+ input[type="submit"],
+ button[type="submit"] {
+    border: 1px solid #3c7fb1;
+    border-radius: 0.3em;
+ }

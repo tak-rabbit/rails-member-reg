@@ -1,0 +1,92 @@
+<%= form_with(model: member, local: true) do |form| %>
+  <%= form.hidden_field :confirmed %>
+
+  <% if member.confirmed.blank? %>
+
+  <h1>登録</h1>
+  <ul>
+    <li>
+      <div class="field_h">
+        <%= t('view.name') %>
+        <span style="color:red">＊</span>
+      </div>
+      <div class="field_t">
+        <%= form.text_field :name, id: :member_name %>
+        <% if @member.errors.messages[:name].any? %>
+        <span class="error"><%= @member.errors.messages[:name][0] %></span>
+        <% end %>
+      </div>
+    </li>
+    <li>
+      <div class="field_h">
+        <%= t('view.email') %>
+        <span style="color:red">＊</span>
+      </div>
+      <div class="field_t">
+        <%= form.text_field :email, id: :member_email, :placeholder => "半角英数字" %>
+        <% if @member.errors.messages[:email].any? %>
+        <span class="error"><%= @member.errors.messages[:email][0] %></span>
+        <% end %>
+      </div>
+  </li>
+    <li>
+      <div class="field_h">
+        <%= t('view.password') %>
+        <span style="color:red">＊</span>
+      </div>
+      <div class="field_t">
+        <%= form.password_field :password, id: :member_password, :placeholder => "半角英数字(6文字以上〜20文字以内)", maxlength: 20 %>
+        <% if @member.errors.messages[:password].any? %>
+        <span class="error"><%= @member.errors.messages[:password][0] %></span></br>
+        <% end %>
+        <%= form.password_field :password_confirmation, id: :member_password_confirmation, :placeholder => "再度入力",maxlength: 20 %>
+        <% if @member.errors.messages[:password_confirmation].any? %>
+        <span class="error"><%= @member.errors.messages[:password_confirmation][0] %></span>
+        <% end %>
+      </div>
+    </li>
+  </ul>
+  <div class="actions">
+    <%= form.submit "確認" %>
+  </div>
+
+  <% else %>
+
+  <h1>確認</h1>
+
+  <ul>
+    <li>
+      <div class="field_h">
+        <%= form.label t('view.name') %>
+      </div>
+      <div class="field_t">
+        <%= member.name %>
+        <%= form.hidden_field :name %>
+      </div>
+    </li>
+    <li>
+      <div class="field_h">
+        <%= form.label t('view.email') %>
+      </div>
+      <div class="field_t">
+        <%= member.email %>
+        <%= form.hidden_field :email %>
+      </div>
+    </li>
+    <li>
+      <div class="field_h">
+        <%= form.label t('view.password') %>
+      </div>
+      <div class="field_t">
+        **********
+        <%= form.hidden_field :password %>
+      </div>
+    </li>
+</ul>
+
+  <div class="actions">
+    <%= form.button "戻る", name: "#{form.object_name}[finished]", value: "" %>
+    <%= form.button "登録", name: "#{form.object_name}[finished]", value: "1" %>
+  </div>
+  <% end %>
+<% end %>
